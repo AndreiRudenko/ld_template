@@ -1,0 +1,25 @@
+{
+
+	project : {
+		name : 'ld template',
+		version : '0.0.1',
+		author : 'andreirudenko',
+
+		app : {
+			name : 'ld_template',
+			package : 'com.andreirudenko.ldt'
+		},
+
+		build : {
+			dependencies : {
+				luxe : '*',
+			}
+		},
+
+		files : {
+			assets : 'assets/'
+		}
+
+	}
+
+}
