@@ -46,30 +46,12 @@ class Move extends Component{
 		airMaxSpeed = new Vector(_x, _y);
 
 		super({name : "MoveComponent"});
-		// var m:Float = maxSpeed.x / 6;
 		var m:Float = 48;
 
-		airAccel = 0.75 * m;        // 1.2; // 0.75 // 1.4 // 0.9
-		airFriction = 0.1 * m;     // 0.6; // 0.1
-		groundAccel = 1 * m;         // 1; // 1 // 1.2 // 1.8 
-		groundFriction = 1.5 * m;  // 1.9; // 1.9 // 2.8 // 1.4
-
-/*        
-		// Multiplier
-		m = 1.0;
-
-		groundAccel = 1.0  * m;
-		groundFric  = 1.9  * m;
-		airAccel    = 0.75 * m;
-		airFric     = 0.1  * m;
-		vxMax       = 6.5  * m;
-		vyMax       = 10.0 * m;
-		jumpHeight  = 8.0  * m;
-		gravNorm    = 0.5  * m;
-		gravSlide   = 0.25 * m; 
-
-		clingTime   = 4.0 * m;
-*/
+		airAccel = 0.75 * m;
+		airFriction = 0.1 * m;
+		groundAccel = 1 * m;
+		groundFriction = 1.5 * m;
 
 	}
 
@@ -96,7 +78,7 @@ class Move extends Component{
 	}
 
 	override public function update(dt:Float) {
-/*
+
 		if(collider.isTouching(CollisionFaces.FLOOR)){
 			accel = groundAccel;
 			friction = groundFriction;
@@ -138,24 +120,6 @@ class Move extends Component{
 				applyFrictionY();
 			}
 		}
-		*/
-
-		if(input.right){
-			collider.velocity.x += 50;
-		}
-
-		if(input.left){
-			collider.velocity.x += -50;
-		}
-
-		if(input.up){
-			collider.velocity.y += -50;
-		}
-
-		if(input.down){
-			collider.velocity.y += 50;
-		}
-
 
 	}
 

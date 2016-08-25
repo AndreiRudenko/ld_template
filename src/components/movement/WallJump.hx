@@ -45,37 +45,36 @@ class WallJump extends Component{
     
     override public function update(dt:Float) {
 
-        if(!collider.isTouching(CollisionFaces.FLOOR)){
-            if (inputComp.jump) {
-                if(collider.isTouching(CollisionFaces.LEFT) && jumpComp.jumpState == Jump.START && !collider.isTouching(CollisionFaces.FLOOR | CollisionFaces.LEFT_PLAYER)){
-                    jumpComp.jumpState = Jump.UP;
+        if(!collider.isTouching(CollisionFaces.FLOOR) && inputComp.jump) {
+            if(collider.isTouching(CollisionFaces.LEFT) && jumpComp.jumpState == Jump.START && !collider.isTouching(CollisionFaces.FLOOR | CollisionFaces.LEFT_PLAYER)){
+                jumpComp.jumpState = Jump.UP;
 
-                    // moveComp.allowX = true;
+                // moveComp.allowX = true;
 
-                    if(inputComp.left){
-                        collider.velocity.y = -jumpComp.jumpVelocity * jumpComp.factor;
-                        collider.velocity.x = moveComp.maxSpeed.x;
-                    } else {
-                        collider.velocity.y = -jumpComp.jumpVelocity * jumpComp.factor;
-                        collider.velocity.x = moveComp.maxSpeed.x + Settings.UNIT;
-                        // collider.velocity.x = jumpComp.jumpVelocity * 1 *jumpComp.factor;
-                    }
-                }   
-                if(collider.isTouching(CollisionFaces.RIGHT) && jumpComp.jumpState == Jump.START && !collider.isTouching(CollisionFaces.FLOOR | CollisionFaces.RIGHT_PLAYER)){
-                    jumpComp.jumpState = Jump.UP;
-
-                    // moveComp.allowX = true;
-
-                    if(inputComp.right){
-                        collider.velocity.y = -jumpComp.jumpVelocity * jumpComp.factor;
-                        collider.velocity.x = -moveComp.maxSpeed.x;
-                    } else {
-                        collider.velocity.y = -jumpComp.jumpVelocity * jumpComp.factor;
-                        collider.velocity.x = -(moveComp.maxSpeed.x + Settings.UNIT);
-                        // collider.velocity.x = -jumpComp.jumpVelocity * 1 * jumpComp.factor;
-                    }
+                if(inputComp.left){
+                    collider.velocity.y = -jumpComp.jumpVelocity * jumpComp.factor;
+                    collider.velocity.x = moveComp.maxSpeed.x;
+                } else {
+                    collider.velocity.y = -jumpComp.jumpVelocity * jumpComp.factor;
+                    collider.velocity.x = moveComp.maxSpeed.x + Settings.UNIT;
+                    // collider.velocity.x = jumpComp.jumpVelocity * 1 *jumpComp.factor;
                 }
-            } 
+            }   
+
+            if(collider.isTouching(CollisionFaces.RIGHT) && jumpComp.jumpState == Jump.START && !collider.isTouching(CollisionFaces.FLOOR | CollisionFaces.RIGHT_PLAYER)){
+                jumpComp.jumpState = Jump.UP;
+
+                // moveComp.allowX = true;
+
+                if(inputComp.right){
+                    collider.velocity.y = -jumpComp.jumpVelocity * jumpComp.factor;
+                    collider.velocity.x = -moveComp.maxSpeed.x;
+                } else {
+                    collider.velocity.y = -jumpComp.jumpVelocity * jumpComp.factor;
+                    collider.velocity.x = -(moveComp.maxSpeed.x + Settings.UNIT);
+                    // collider.velocity.x = -jumpComp.jumpVelocity * 1 * jumpComp.factor;
+                }
+            }
         }
 
     }

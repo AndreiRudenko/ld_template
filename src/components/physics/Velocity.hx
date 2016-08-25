@@ -17,9 +17,6 @@ class Velocity extends Component{
 
 	public var active( default, set ):Bool = true;
 
-	// public var freezeX:Bool = false;
-	// public var freezeY:Bool = false;
-
 	public var maxSpeed:Float = 3840; // 64 px per frame
 
 	public var mass( default, set ):Float;

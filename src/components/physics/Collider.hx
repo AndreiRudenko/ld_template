@@ -32,9 +32,6 @@ class Collider extends Component{
 		/** collider isTrigger */
 	public var isTrigger : Bool = false;
 
-	// public var freezeX : Bool = false;
-	// public var freezeY : Bool = false;
-
 		/** collider position */
 	public var position : Vector;
 		/** Collider velocity */
@@ -128,8 +125,6 @@ class Collider extends Component{
 		gridIndex = [];
 
 	}
-
-	// override public function init() {}    
 
 	override public function onadded() {
 
@@ -420,7 +415,6 @@ class Collider extends Component{
 		
 		// if(c.normal.x != 0) velocity.x *= -restitution;
 		// if(c.normal.y != 0) velocity.y *= -restitution;
-
 
 		var normImp:Float = (-(1 + restitution) * velocity.dot(c.normal));
 
